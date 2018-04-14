@@ -1,15 +1,15 @@
 require('dotenv').config();
 
-var viamo = require('./lib');
+var viamoAPI = require('./lib');
 
-var api = viamo({
+var viamo = viamoAPI({
   api: {
     url: 'https://go.votomobile.org/api/v1/',
     key: process.env.API_KEY
   }
 });
 
-api.surveys.get()
+viamo.surveys.get()
 .then((res) => {
-  console.log(res);
+  console.log(res.data.surveys.length); //surveys.map(survey => survey.title));
 });
