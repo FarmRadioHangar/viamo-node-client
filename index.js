@@ -9,7 +9,12 @@ var viamo = viamoAPI({
   }
 });
 
-viamo.surveys.get()
+viamo.subscribers.get()
 .then((res) => {
-  console.log(res.data.surveys.length); //surveys.map(survey => survey.title));
+  console.log(res.data.subscribers.map(s => s.id));
+});
+
+viamo.subscribers.get(156560571)
+.then((res) => {
+  console.log(res.data.subscriber);
 });
