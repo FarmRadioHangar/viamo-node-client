@@ -66,7 +66,7 @@ describe('sanitizer.params', function() {
 
   });
 
-  describe('test', function() {
+  describe('valid options', function() {
 
     var result = {
       'has_sms': '0',
@@ -74,7 +74,7 @@ describe('sanitizer.params', function() {
       'response_wait_time': 10
     };
 
-    it('should equal ' + JSON.stringify(result), function() {
+    it('should be sanitized', function() {
       var options = {
         hasVoice: true,
         hasSms: false,
