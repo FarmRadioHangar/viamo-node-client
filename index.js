@@ -1,6 +1,6 @@
 require('dotenv').config();
 
-var viamoAPI = require('./lib');
+var viamoAPI  = require('./lib');
 var sanitizer = require('./lib/sanitizer');
 
 var viamo = viamoAPI({
@@ -10,10 +10,24 @@ var viamo = viamoAPI({
   }
 });
 
-viamo.surveys.create()
+viamo.surveys.create({
+  hasVoice: false,
+  hasSms: false,
+  survey_title: 'A mild test survey'
+})
 .then((res) => {
   console.log(res);
+})
+.catch((error) => {
+  // Handle error
 });
+
+/*
+viamo.surveys.get()
+.then((res) => {
+  console.log(res.status);
+});
+*/
 
 //var opts3 = {
 //  hasVoice: 'abx',
