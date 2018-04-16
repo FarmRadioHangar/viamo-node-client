@@ -5,7 +5,7 @@ var sanitizer = require('../lib/sanitizer');
 
 chai.should();
 
-describe('sanitizer.params', function() {
+describe('sanitizer.normal', function() {
 
   describe('string instead of truthy value', function() {
 
@@ -30,7 +30,7 @@ describe('sanitizer.params', function() {
           alias: 'responseWaitTime'
         }
       };
-      expect(sanitizer.params.bind(null, options, rules)).to.throw(
+      expect(sanitizer.normal.bind(null, options, rules)).to.throw(
         'Truthy value expected for parameter hasVoice'
       );
     });
@@ -59,7 +59,7 @@ describe('sanitizer.params', function() {
           alias: 'responseWaitTime'
         }
       };
-      expect(sanitizer.params.bind(null, options, rules)).to.throw(
+      expect(sanitizer.normal.bind(null, options, rules)).to.throw(
         'Parameter has_sms is required'
       );
     });
@@ -95,7 +95,7 @@ describe('sanitizer.params', function() {
           alias: 'responseWaitTime'
         }
       };
-      expect(sanitizer.params(options, rules)).to.deep.equal(result);
+      expect(sanitizer.normal(options, rules)).to.deep.equal(result);
     });
 
   });
