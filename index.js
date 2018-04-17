@@ -11,14 +11,24 @@ var viamo = viamoAPI({
 });
 
 
-viamo.surveys.get()
+//viamo.surveys.get()
+//.then((res) => {
+//  res.data.surveys.forEach((survey) => {
+//    console.log(survey.title);
+//  });
+//})
+//.catch((error) => {
+//  // Handle error
+//});
+
+viamo.surveys.update({a: 5})
 .then((res) => {
   res.data.surveys.forEach((survey) => {
     console.log(survey.title);
   });
 })
 .catch((error) => {
-  // Handle error
+  console.log('Handle!');
 });
 
 //viamo.surveys.create({
