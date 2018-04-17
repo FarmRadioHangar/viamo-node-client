@@ -10,17 +10,28 @@ var viamo = viamoAPI({
   }
 });
 
-viamo.surveys.create({
-  hasVoice: false,
-  hasSms: false,
-  survey_title: 'A mild test survey'
-})
+
+viamo.surveys.get()
 .then((res) => {
-  console.log(res);
+  res.data.surveys.forEach((survey) => {
+    console.log(survey.title);
+  });
 })
 .catch((error) => {
   // Handle error
 });
+
+//viamo.surveys.create({
+//  hasVoice: false,
+//  hasSms: false,
+//  survey_title: 'A mild test survey'
+//})
+//.then((res) => {
+//  console.log(res);
+//})
+//.catch((error) => {
+//  // Handle error
+//});
 
 /*
 viamo.surveys.get()
