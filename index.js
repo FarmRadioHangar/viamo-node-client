@@ -4,7 +4,6 @@ var viamoAPI = require('./lib');
 
 var viamo = viamoAPI({
   api: {
-    url: 'https://go.votomobile.org/api/v1/',
     key: process.env.API_KEY
   }
 });
