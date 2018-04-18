@@ -18,21 +18,30 @@ var viamo = viamoAPI({
   }
 });
 
-//describe('surveys', function() {
-//
-//  describe('create', function() {
-//
-//  });
-//
-//});
-
 describe('surveys', function() {
+
+  it('should return a 200 OK status code', function() {
+    return viamo.surveys.create({
+      hasVoice: true,
+      hasSms: false,
+      surveyTitle: 'Test survey'
+    })
+    .then((res) => {
+      expect(res.statusCode).to.equal(200);
+    });
+  });
 
   it('should return a 200 OK status code', function() {
     return viamo.surveys.get()
     .then((res) => {
-      //console.log(res);
       expect(res.statusCode).to.equal(200);
+    });
+  });
+
+  it('should return a JSON (object) response body', function() {
+    return viamo.surveys.get()
+    .then((res) => {
+      expect(res.body).to.be.an('object');
     });
   });
 

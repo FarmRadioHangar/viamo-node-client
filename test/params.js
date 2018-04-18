@@ -74,7 +74,7 @@ describe('params.normalize', function() {
       'response_wait_time': 10
     };
 
-    it('should be sanitized', function() {
+    it('should be normalized', function() {
       var options = {
         hasVoice: true,
         hasSms: false,

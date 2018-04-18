@@ -1,9 +1,9 @@
 var nock = require('nock');
 
-var viamoUrl = 'https://go.votomobile.org/api/v1/';
+var viamoUrl = 'https://go.votomobile.org/api/v1';
 
 nock(viamoUrl)
-.get('/surveys')
+.get(/surveys.*/)
 .reply(200, {
   status: 200,
   code: 1000,
@@ -45,4 +45,12 @@ nock(viamoUrl)
   },
   message: "Surveys fetched successfully",
   more_info: ""
+}).persist();
+
+nock(viamoUrl)
+.post(/surveys.*/)
+.reply(200, {
+  "status": 200,
+  "message": "Survey Created",
+  "data": 21122
 });
