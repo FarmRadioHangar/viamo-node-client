@@ -1,4 +1,8 @@
 {
+  "scripts": {
+    "test": "node_modules/.bin/mocha",
+    "docs": "node_modules/.bin/jsdoc -c jsdoc.conf lib/ lib/modules/"
+  },
   "dependencies": {
     "content-type": "^1.0.4",
     "request": "^2.85.0",
