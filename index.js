@@ -5,19 +5,31 @@ var viamoAPI = require('./lib');
 var viamo = viamoAPI({
   api: {
     key: process.env.API_KEY
-  }
+  },
+  fullResponse: false
 });
 
-viamo.surveys.get()
+viamo.messages.create({
+  title: 'Test'
+})
 .then((res) => {
-  res.body.data.surveys.forEach((survey) => {
-    console.log(survey);
-  });
+  console.log(res);
 })
 .catch((error) => {
   console.log(error);
   // Handle error
 });
+
+//viamo.surveys.get()
+//.then((res) => {
+//  res.body.data.surveys.forEach((survey) => {
+//    console.log(survey);
+//  });
+//})
+//.catch((error) => {
+//  console.log(error);
+//  // Handle error
+//});
 
 //viamo.surveys.update({a: 5})
 //.then((res) => {
