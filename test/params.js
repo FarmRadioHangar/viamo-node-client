@@ -1,11 +1,11 @@
-var assert    = require('assert');
-var chai      = require('chai');
-var expect    = require('chai').expect;
-var sanitizer = require('../lib/sanitizer');
+var assert  = require('assert');
+var chai    = require('chai');
+var expect  = require('chai').expect;
+var params  = require('../lib/params');
 
 chai.should();
 
-describe('sanitizer.normal', function() {
+describe('params.normalize', function() {
 
   describe('string instead of truthy value', function() {
 
@@ -19,18 +19,18 @@ describe('sanitizer.normal', function() {
         'has_voice': {
           required: true,
           alias: 'hasVoice',
-          format: sanitizer.BinChar
+          format: params.BinChar
         },
         'has_sms': {
           required: true,
           alias: 'hasSms',
-          format: sanitizer.BinChar
+          format: params.BinChar
         },
         'response_wait_time': {
           alias: 'responseWaitTime'
         }
       };
-      expect(sanitizer.normal.bind(null, options, rules)).to.throw(
+      expect(params.normalize.bind(null, options, rules)).to.throw(
         'Truthy value expected for parameter hasVoice'
       );
     });
@@ -48,18 +48,18 @@ describe('sanitizer.normal', function() {
         'has_voice': {
           required: true,
           alias: 'hasVoice',
-          format: sanitizer.BinChar
+          format: params.BinChar
         },
         'has_sms': {
           required: true,
           alias: 'hasSms',
-          format: sanitizer.BinChar
+          format: params.BinChar
         },
         'response_wait_time': {
           alias: 'responseWaitTime'
         }
       };
-      expect(sanitizer.normal.bind(null, options, rules)).to.throw(
+      expect(params.normalize.bind(null, options, rules)).to.throw(
         'Parameter has_sms is required'
       );
     });
@@ -84,18 +84,18 @@ describe('sanitizer.normal', function() {
         'has_voice': {
           required: true,
           alias: 'hasVoice',
-          format: sanitizer.BinChar
+          format: params.BinChar
         },
         'has_sms': {
           required: true,
           alias: 'hasSms',
-          format: sanitizer.BinChar
+          format: params.BinChar
         },
         'response_wait_time': {
           alias: 'responseWaitTime'
         }
       };
-      expect(sanitizer.normal(options, rules)).to.deep.equal(result);
+      expect(params.normalize(options, rules)).to.deep.equal(result);
     });
 
   });
