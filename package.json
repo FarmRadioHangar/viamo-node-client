@@ -1,4 +1,5 @@
 {
+  "name": "viamo-node-client",
   "scripts": {
     "test": "node_modules/.bin/mocha",
     "docs": "node_modules/.bin/jsdoc -c jsdoc.conf lib/ lib/modules/"
