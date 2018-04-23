@@ -5,20 +5,40 @@ var viamoAPI = require('./lib');
 var viamo = viamoAPI({
   api: {
     key: process.env.API_KEY
-  },
-  fullResponse: false
+  }
+//  fullResponse: true
 });
 
-viamo.messages.create({
-  title: 'Test'
+viamo.ping()
+.then(function(res) {
+  console.log(res.more_info);
 })
-.then((res) => {
-  console.log(res);
-})
-.catch((error) => {
-  console.log(error);
-  // Handle error
-});
+
+//viamo.surveys.get({
+//  limit: 2
+//})
+//.then(function step(res) {
+//  res.data.surveys.forEach((call) => {
+//    console.log(call.id);
+//  });
+//  if (res.hasNextPage) {
+//    return res.nextPage().then(step);
+//  }
+//})
+//.catch((error) => {
+//  console.error(error);
+//});
+
+//viamo.messages.create({
+//  title: 'Test'
+//})
+//.then((res) => {
+//  console.log(res);
+//})
+//.catch((error) => {
+//  console.log(error);
+//  // Handle error
+//});
 
 //viamo.surveys.get()
 //.then((res) => {
