@@ -33,8 +33,14 @@
  *
  * @desc 
  *
- * A request to Viamo to send a call or SMS to multiple subscribers. Content
- * is added to a call in the form of a message and/or survey.
+ * An outgoing call is a request to Viamo to send a call or SMS to multiple 
+ * subscribers. Content can be added in the form of a message and/or survey.
+ *
+ * ### Submodules
+ *
+ * * [outgoingCalls.counts]{@link module:outgoingCalls^counts}
+ * * [outgoingCalls.deliveryLogs]{@link module:outgoingCalls^deliveryLogs}
+ * * [outgoingCalls.summary]{@link module:outgoingCalls^summary}
  */
 module.exports = function(config) {
 
@@ -42,11 +48,13 @@ module.exports = function(config) {
 
   return {
 
-    /*
-     * viamo.outgoingCalls.create
+    /**
+     * @instance
      *
-     * https://go.votomobile.org/apidoc/outgoing_calls.html#create-an-outgoing-call
+     * @see https://go.votomobile.org/apidoc/outgoing_calls.html#create-an-outgoing-call
      */
+    create: function() {
+    },
 
     /**
      * @instance
@@ -54,6 +62,22 @@ module.exports = function(config) {
      * @method get
      *
      * @see https://go.votomobile.org/apidoc/outgoing_calls.html#list-outgoing-calls
+     *
+     * @desc List outgoing calls.
+     *
+     * @param params {Object} - An object with query parameters to be sent with 
+     *                          the Viamo API request. Query parameters 
+     *                          available for this request are:
+     *
+     * | Name    | Required | Type       | Description |
+     * | ------- | -------- | ---------- | ----------- |
+     * | `limit` | no       | Number     | Maximum page size to use for paginated results. |
+     *
+     * @example
+     *
+     * // TODO
+     *
+     * @returns A Promise that resolves to the response object from Viamo.
      */
 
     /**
@@ -62,57 +86,76 @@ module.exports = function(config) {
      * @method get
      *
      * @see https://go.votomobile.org/apidoc/outgoing_calls.html#list-details-of-an-outgoing-call
+     *
+     * @desc Get details of an outgoing call.
+     *
+     * @param id {Number | String} - Outgoing call ID
+     *
+     * @returns A Promise that resolves to the response object from Viamo.
      */
     get: function() {
+      var arg0 = arguments[0];
+      if ('number' === arg0 || 'string' === arg0) {
+        return api.get(`outgoing_calls/${arg0}`, arguments[1]);
+      }
+      return api.get('outgoing_calls', arg0);
     },
 
-    /*
-     * viamo.outgoingCalls.cancel
+    /**
+     * @instance
      *
-     * https://go.votomobile.org/apidoc/outgoing_calls.html#cancel-outgoing-call
+     * @see https://go.votomobile.org/apidoc/outgoing_calls.html#cancel-outgoing-call
      */
+    cancel: function() {
+    },
 
-    /*
-     * viamo.outgoingCalls.counts
+    /**
+     * @module outgoingCalls^counts
      */
     counts: {
 
-      /*
+      /**
+       * @instance 
+       *
        * viamo.outgoingCalls.counts.get
        *
-       * https://go.votomobile.org/apidoc/outgoing_calls.html#count-interactions-delivery-logs-for-an-outgoing-call
+       * @see https://go.votomobile.org/apidoc/outgoing_calls.html#count-interactions-delivery-logs-for-an-outgoing-call
        */
       get: function() {
       }
 
     },
 
-    /*
-     * viamo.outgoingCalls.deliveryLogs
+    /**
+     * @module outgoingCalls^deliveryLogs
      */
     deliveryLogs: {
 
-      /*
+      /**
+       * @instance
+       *
        * viamo.outgoingCalls.deliveryLogs.get
        *
-       * https://go.votomobile.org/apidoc/delivery_logs.html#get-delivery-logs-for-an-outgoing-call
+       * @see https://go.votomobile.org/apidoc/delivery_logs.html#get-delivery-logs-for-an-outgoing-call
        */
       get: function() {
       }
 
     },
 
-    /*
-     * viamo.outgoingCalls.summary
+    /**
+     * @module outgoingCalls^summary
      */
     summary: {
 
-      /*
+      /**
+       * @instance
+       *
        * viamo.outgoingCalls.summary.get
        *
        * Retrieve aggregate statistics for an outgoing call.
        *
-       * https://go.votomobile.org/apidoc/delivery_logs.html#call-summary-for-an-outgoing-call
+       * @see https://go.votomobile.org/apidoc/delivery_logs.html#call-summary-for-an-outgoing-call
        */
       get: function() {
       }
@@ -132,13 +175,13 @@ module.exports = function(config) {
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-accounts.html">accounts</a></li><li><a href="module-audioFiles.html">audioFiles</a></li><li><a href="module-groups.html">groups</a></li><li><a href="module-incomingCalls.html">incomingCalls</a></li><li><a href="module-languages.html">languages</a></li><li><a href="module-messages.html">messages</a></li><li><a href="module-messages%255Ecounts.html">messages^counts</a></li><li><a href="module-outgoingCalls.html">outgoingCalls</a></li><li><a href="module-phoneNumbers.html">phoneNumbers</a></li><li><a href="module-prompts.html">prompts</a></li><li><a href="module-subscribers.html">subscribers</a></li><li><a href="module-surveys.html">surveys</a></li><li><a href="module-surveys%255Econclusion.html">surveys^conclusion</a></li><li><a href="module-surveys%255Ecounts.html">surveys^counts</a></li><li><a href="module-surveys%255EdeliveryLogs.html">surveys^deliveryLogs</a></li><li><a href="module-surveys%255Eintroduction.html">surveys^introduction</a></li><li><a href="module-surveys%255Equestions.html">surveys^questions</a></li><li><a href="module-surveys%255Equestions%255Ecounts.html">surveys^questions^counts</a></li><li><a href="module-surveys%255Equestions%255Eresults.html">surveys^questions^results</a></li><li><a href="module-surveys%255Eresults.html">surveys^results</a></li><li><a href="module-surveys%255Esubscribers.html">surveys^subscribers</a></li></ul><h3>Global</h3><ul><li><a href="global.html#ping">ping</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-audioFiles.html">audioFiles</a></li><li><a href="module-groups.html">groups</a></li><li><a href="module-incomingCalls.html">incomingCalls</a></li><li><a href="module-languages.html">languages</a></li><li><a href="module-messages.html">messages</a></li><li><a href="module-messages%255Ecounts.html">messages^counts</a></li><li><a href="module-outgoingCalls.html">outgoingCalls</a></li><li><a href="module-outgoingCalls%255Ecounts.html">outgoingCalls^counts</a></li><li><a href="module-outgoingCalls%255EdeliveryLogs.html">outgoingCalls^deliveryLogs</a></li><li><a href="module-outgoingCalls%255Esummary.html">outgoingCalls^summary</a></li><li><a href="module-phoneNumbers.html">phoneNumbers</a></li><li><a href="module-prompts.html">prompts</a></li><li><a href="module-subscribers.html">subscribers</a></li><li><a href="module-surveys.html">surveys</a></li><li><a href="module-surveys%255Econclusion.html">surveys^conclusion</a></li><li><a href="module-surveys%255Ecounts.html">surveys^counts</a></li><li><a href="module-surveys%255EdeliveryLogs.html">surveys^deliveryLogs</a></li><li><a href="module-surveys%255Eintroduction.html">surveys^introduction</a></li><li><a href="module-surveys%255Equestions.html">surveys^questions</a></li><li><a href="module-surveys%255Equestions%255Ecounts.html">surveys^questions^counts</a></li><li><a href="module-surveys%255Equestions%255Eresults.html">surveys^questions^results</a></li><li><a href="module-surveys%255Eresults.html">surveys^results</a></li><li><a href="module-surveys%255Esubscribers.html">surveys^subscribers</a></li></ul><h3>Global</h3><ul><li><a href="global.html#accountsCredit">accountsCredit</a></li><li><a href="global.html#ping">ping</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Sun Apr 22 2018 09:20:48 GMT+0300 (EAT)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Mon Apr 23 2018 18:19:57 GMT+0300 (EAT)
 </footer>
 
 <script> prettyPrint(); </script>
