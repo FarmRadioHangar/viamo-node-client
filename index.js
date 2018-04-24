@@ -8,9 +8,20 @@ var viamoAPI = require('./lib');
 
 var viamo = viamoAPI(process.env.API_KEY);
 
-viamo.messages.get()
+viamo.languages.create({
+  name: 'Amharic',
+  abbreviation: 'AM'
+})
 .then((res) => {
-  console.log(res);
+  if (200 == res.status) {
+    console.log('Amharic language was added to the system.');
+  }
+  return viamo.languages.get();
+})
+.then((res) => {
+  res.data.languages.forEach((language) => {
+    console.log(language.name);
+  });
 });
 
 //viamo.ping()
