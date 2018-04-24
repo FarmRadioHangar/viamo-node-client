@@ -8,7 +8,7 @@ var viamoAPI = require('./lib');
 
 var viamo = viamoAPI(process.env.API_KEY);
 
-viamo.accountsCredit()
+viamo.accountCredit()
 .then((res) => {
   console.log(res.data);
 });
