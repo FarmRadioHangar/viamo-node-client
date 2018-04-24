@@ -38,7 +38,7 @@
     <div class="container-overview">
     
         
-            <div class="description"><p>TODO</p></div>
+            <div class="description"><p>API to manage languages in the Viamo platform programmatically.</p></div>
         
 
         
@@ -156,6 +156,10 @@
 
 
 
+<div class="description">
+    <p>Add a new language.</p>
+</div>
+
 
 
 
@@ -197,7 +201,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="modules_languages.js.html">modules/languages.js</a>, <a href="modules_languages.js.html#line21">line 21</a>
+        <a href="modules_languages.js.html">modules/languages.js</a>, <a href="modules_languages.js.html#line23">line 23</a>
     </li></ul></dd>
     
 
@@ -227,6 +231,16 @@
 
 
 
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>A Promise that resolves to the response object from Viamo.</p>
+</div>
+
+
+
+    
 
 
 
@@ -244,6 +258,10 @@
     
 
 
+
+<div class="description">
+    <p>Delete a language.</p>
+</div>
 
 
 
@@ -286,7 +304,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="modules_languages.js.html">modules/languages.js</a>, <a href="modules_languages.js.html#line53">line 53</a>
+        <a href="modules_languages.js.html">modules/languages.js</a>, <a href="modules_languages.js.html#line94">line 94</a>
     </li></ul></dd>
     
 
@@ -316,6 +334,16 @@
 
 
 
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>A Promise that resolves to the response object from Viamo.</p>
+</div>
+
+
+
+    
 
 
 
@@ -327,19 +355,75 @@
     
 
     
-    <h4 class="name" id="get"><span class="type-signature"></span>get<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="get"><span class="type-signature"></span>get<span class="signature">(id)</span><span class="type-signature"></span></h4>
     
 
     
 
 
 
+<div class="description">
+    <p>Get details of a language.</p>
+</div>
 
 
 
 
 
 
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>id</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+|
+
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Language ID</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
 
 
 
@@ -375,7 +459,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="modules_languages.js.html">modules/languages.js</a>, <a href="modules_languages.js.html#line32">line 32</a>
+        <a href="modules_languages.js.html">modules/languages.js</a>, <a href="modules_languages.js.html#line52">line 52</a>
     </li></ul></dd>
     
 
@@ -385,8 +469,6 @@
     <dt class="tag-see">See:</dt>
     <dd class="tag-see">
         <ul>
-            <li><a href="https://go.votomobile.org/apidoc/languages.html#list-languages">https://go.votomobile.org/apidoc/languages.html#list-languages</a></li>
-        
             <li><a href="https://go.votomobile.org/apidoc/languages.html#list-language-details">https://go.votomobile.org/apidoc/languages.html#list-language-details</a></li>
         </ul>
     </dd>
@@ -407,6 +489,16 @@
 
 
 
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>A Promise that resolves to the response object from Viamo.</p>
+</div>
+
+
+
+    
 
 
 
@@ -418,12 +510,16 @@
     
 
     
-    <h4 class="name" id="update"><span class="type-signature"></span>update<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="get"><span class="type-signature"></span>get<span class="signature">()</span><span class="type-signature"></span></h4>
     
 
     
 
 
+
+<div class="description">
+    <p>List languages.</p>
+</div>
 
 
 
@@ -466,7 +562,125 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="modules_languages.js.html">modules/languages.js</a>, <a href="modules_languages.js.html#line43">line 43</a>
+        <a href="modules_languages.js.html">modules/languages.js</a>, <a href="modules_languages.js.html#line26">line 26</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="https://go.votomobile.org/apidoc/languages.html#list-languages">https://go.votomobile.org/apidoc/languages.html#list-languages</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>A Promise that resolves to the response object from Viamo.</p>
+</div>
+
+
+
+    
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>// List names of available languages
+
+viamo.languages.get()
+.then((res) => {
+  res.data.languages.forEach((language) => {
+    console.log(language.name);
+  });
+})
+.catch((error) => {
+  // Handle error
+});</code></pre>
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="update"><span class="type-signature"></span>update<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Update a language.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="modules_languages.js.html">modules/languages.js</a>, <a href="modules_languages.js.html#line82">line 82</a>
     </li></ul></dd>
     
 
@@ -496,6 +710,16 @@
 
 
 
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>A Promise that resolves to the response object from Viamo.</p>
+</div>
+
+
+
+    
 
 
 
@@ -517,13 +741,13 @@
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-audioFiles.html">audioFiles</a></li><li><a href="module-groups.html">groups</a></li><li><a href="module-incomingCalls.html">incomingCalls</a></li><li><a href="module-languages.html">languages</a></li><li><a href="module-messages.html">messages</a></li><li><a href="module-messages%255Ecounts.html">messages^counts</a></li><li><a href="module-outgoingCalls.html">outgoingCalls</a></li><li><a href="module-outgoingCalls%255Ecounts.html">outgoingCalls^counts</a></li><li><a href="module-outgoingCalls%255EdeliveryLogs.html">outgoingCalls^deliveryLogs</a></li><li><a href="module-outgoingCalls%255Esummary.html">outgoingCalls^summary</a></li><li><a href="module-phoneNumbers.html">phoneNumbers</a></li><li><a href="module-prompts.html">prompts</a></li><li><a href="module-subscribers.html">subscribers</a></li><li><a href="module-surveys.html">surveys</a></li><li><a href="module-surveys%255Econclusion.html">surveys^conclusion</a></li><li><a href="module-surveys%255Ecounts.html">surveys^counts</a></li><li><a href="module-surveys%255EdeliveryLogs.html">surveys^deliveryLogs</a></li><li><a href="module-surveys%255Eintroduction.html">surveys^introduction</a></li><li><a href="module-surveys%255Equestions.html">surveys^questions</a></li><li><a href="module-surveys%255Equestions%255Ecounts.html">surveys^questions^counts</a></li><li><a href="module-surveys%255Equestions%255Eresults.html">surveys^questions^results</a></li><li><a href="module-surveys%255Eresults.html">surveys^results</a></li><li><a href="module-surveys%255Esubscribers.html">surveys^subscribers</a></li></ul><h3>Global</h3><ul><li><a href="global.html#accountsCredit">accountsCredit</a></li><li><a href="global.html#ping">ping</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-audioFiles.html">audioFiles</a></li><li><a href="module-groups.html">groups</a></li><li><a href="module-incomingCalls.html">incomingCalls</a></li><li><a href="module-incomingCalls%255Ecounts.html">incomingCalls^counts</a></li><li><a href="module-incomingCalls%255EdeliveryLogs.html">incomingCalls^deliveryLogs</a></li><li><a href="module-languages.html">languages</a></li><li><a href="module-messages.html">messages</a></li><li><a href="module-messages%255Ecounts.html">messages^counts</a></li><li><a href="module-outgoingCalls.html">outgoingCalls</a></li><li><a href="module-outgoingCalls%255Ecounts.html">outgoingCalls^counts</a></li><li><a href="module-outgoingCalls%255EdeliveryLogs.html">outgoingCalls^deliveryLogs</a></li><li><a href="module-outgoingCalls%255Esummary.html">outgoingCalls^summary</a></li><li><a href="module-phoneNumbers.html">phoneNumbers</a></li><li><a href="module-prompts.html">prompts</a></li><li><a href="module-subscribers.html">subscribers</a></li><li><a href="module-surveys.html">surveys</a></li><li><a href="module-surveys%255Econclusion.html">surveys^conclusion</a></li><li><a href="module-surveys%255Ecounts.html">surveys^counts</a></li><li><a href="module-surveys%255EdeliveryLogs.html">surveys^deliveryLogs</a></li><li><a href="module-surveys%255Eintroduction.html">surveys^introduction</a></li><li><a href="module-surveys%255Equestions.html">surveys^questions</a></li><li><a href="module-surveys%255Equestions%255Ecounts.html">surveys^questions^counts</a></li><li><a href="module-surveys%255Equestions%255Eresults.html">surveys^questions^results</a></li><li><a href="module-surveys%255Eresults.html">surveys^results</a></li><li><a href="module-surveys%255Esubscribers.html">surveys^subscribers</a></li></ul><h3>Global</h3><ul><li><a href="global.html#accountsCredit">accountsCredit</a></li><li><a href="global.html#ping">ping</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Mon Apr 23 2018 18:19:57 GMT+0300 (EAT)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Tue Apr 24 2018 09:05:31 GMT+0300 (EAT)
 </footer>
 
 <script> prettyPrint(); </script>

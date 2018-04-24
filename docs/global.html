@@ -112,7 +112,17 @@
 
 
 <div class="description">
-    <p>Check account credit.</p>
+    <p>Check available account credit.</p>
+<h4>Typical response</h4><pre class="prettyprint source"><code>{ 
+    status: 200,
+    code: 2000,
+    data: '1233',
+    message: 'Organisation\'s credit fetched successfully',
+    more_info: '',
+    pagination: null,
+    url: 'https://go.votomobile.org/api/v1/accounts/credit' 
+}</code></pre><p>The response contains a <code>data</code> property with the organisation’s current 
+credit balance, in Viamo credits. (1 Viamo credit = 1 USD).</p>
 </div>
 
 
@@ -156,7 +166,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line84">line 84</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line106">line 106</a>
     </li></ul></dd>
     
 
@@ -190,9 +200,7 @@
 
         
 <div class="param-desc">
-    <p>A Promise that resolves to the response object from Viamo. The 
-response contains a <code>data</code> property with the organisation’s current 
-credit balance, in Viamo credits. (1 Viamo credit = 1 USD).</p>
+    <p>A Promise that resolves to the response object from Viamo.</p>
 </div>
 
 
@@ -200,6 +208,14 @@ credit balance, in Viamo credits. (1 Viamo credit = 1 USD).</p>
     
 
 
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>viamo.accountsCredit()
+.then((res) => {
+  console.log(res);  // or res.data for the actual credit balance
+});</code></pre>
 
 
 
@@ -322,13 +338,13 @@ credit balance, in Viamo credits. (1 Viamo credit = 1 USD).</p>
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-audioFiles.html">audioFiles</a></li><li><a href="module-groups.html">groups</a></li><li><a href="module-incomingCalls.html">incomingCalls</a></li><li><a href="module-languages.html">languages</a></li><li><a href="module-messages.html">messages</a></li><li><a href="module-messages%255Ecounts.html">messages^counts</a></li><li><a href="module-outgoingCalls.html">outgoingCalls</a></li><li><a href="module-outgoingCalls%255Ecounts.html">outgoingCalls^counts</a></li><li><a href="module-outgoingCalls%255EdeliveryLogs.html">outgoingCalls^deliveryLogs</a></li><li><a href="module-outgoingCalls%255Esummary.html">outgoingCalls^summary</a></li><li><a href="module-phoneNumbers.html">phoneNumbers</a></li><li><a href="module-prompts.html">prompts</a></li><li><a href="module-subscribers.html">subscribers</a></li><li><a href="module-surveys.html">surveys</a></li><li><a href="module-surveys%255Econclusion.html">surveys^conclusion</a></li><li><a href="module-surveys%255Ecounts.html">surveys^counts</a></li><li><a href="module-surveys%255EdeliveryLogs.html">surveys^deliveryLogs</a></li><li><a href="module-surveys%255Eintroduction.html">surveys^introduction</a></li><li><a href="module-surveys%255Equestions.html">surveys^questions</a></li><li><a href="module-surveys%255Equestions%255Ecounts.html">surveys^questions^counts</a></li><li><a href="module-surveys%255Equestions%255Eresults.html">surveys^questions^results</a></li><li><a href="module-surveys%255Eresults.html">surveys^results</a></li><li><a href="module-surveys%255Esubscribers.html">surveys^subscribers</a></li></ul><h3>Global</h3><ul><li><a href="global.html#accountsCredit">accountsCredit</a></li><li><a href="global.html#ping">ping</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-audioFiles.html">audioFiles</a></li><li><a href="module-groups.html">groups</a></li><li><a href="module-incomingCalls.html">incomingCalls</a></li><li><a href="module-incomingCalls%255Ecounts.html">incomingCalls^counts</a></li><li><a href="module-incomingCalls%255EdeliveryLogs.html">incomingCalls^deliveryLogs</a></li><li><a href="module-languages.html">languages</a></li><li><a href="module-messages.html">messages</a></li><li><a href="module-messages%255Ecounts.html">messages^counts</a></li><li><a href="module-outgoingCalls.html">outgoingCalls</a></li><li><a href="module-outgoingCalls%255Ecounts.html">outgoingCalls^counts</a></li><li><a href="module-outgoingCalls%255EdeliveryLogs.html">outgoingCalls^deliveryLogs</a></li><li><a href="module-outgoingCalls%255Esummary.html">outgoingCalls^summary</a></li><li><a href="module-phoneNumbers.html">phoneNumbers</a></li><li><a href="module-prompts.html">prompts</a></li><li><a href="module-subscribers.html">subscribers</a></li><li><a href="module-surveys.html">surveys</a></li><li><a href="module-surveys%255Econclusion.html">surveys^conclusion</a></li><li><a href="module-surveys%255Ecounts.html">surveys^counts</a></li><li><a href="module-surveys%255EdeliveryLogs.html">surveys^deliveryLogs</a></li><li><a href="module-surveys%255Eintroduction.html">surveys^introduction</a></li><li><a href="module-surveys%255Equestions.html">surveys^questions</a></li><li><a href="module-surveys%255Equestions%255Ecounts.html">surveys^questions^counts</a></li><li><a href="module-surveys%255Equestions%255Eresults.html">surveys^questions^results</a></li><li><a href="module-surveys%255Eresults.html">surveys^results</a></li><li><a href="module-surveys%255Esubscribers.html">surveys^subscribers</a></li></ul><h3>Global</h3><ul><li><a href="global.html#accountsCredit">accountsCredit</a></li><li><a href="global.html#ping">ping</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Mon Apr 23 2018 18:19:57 GMT+0300 (EAT)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Tue Apr 24 2018 09:05:31 GMT+0300 (EAT)
 </footer>
 
 <script> prettyPrint(); </script>
