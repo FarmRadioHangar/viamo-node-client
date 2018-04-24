@@ -2,27 +2,31 @@ require('dotenv').config();
 
 var viamoAPI = require('./lib');
 
-var viamo = viamoAPI({
-  api: {
-    key: process.env.API_KEY
-  }
-//  fullResponse: true
+//var viamo = viamoAPI({
+//  api: { key: process.env.API_KEY }
+//});
+
+var viamo = viamoAPI(process.env.API_KEY);
+
+viamo.accountsCredit()
+.then((res) => {
+  console.log(res.data);
 });
 
-viamo.ping()
-.then(function(res) {
-  console.log(res.more_info);
-})
-
-//viamo.surveys.get({
-//  limit: 2
+//viamo.ping()
+//.then(function(res) {
+//  console.log(res.more_info);
 //})
-//.then(function step(res) {
-//  res.data.surveys.forEach((call) => {
+//
+//viamo.outgoingCalls.get({
+//  limit: 5
+//})
+//.then(function next(res) {
+//  res.data.outgoing_calls.forEach((call) => {
 //    console.log(call.id);
 //  });
 //  if (res.hasNextPage) {
-//    return res.nextPage().then(step);
+//    return res.nextPage().then(next);
 //  }
 //})
 //.catch((error) => {
