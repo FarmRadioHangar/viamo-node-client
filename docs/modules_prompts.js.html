@@ -31,7 +31,15 @@
  *
  * @see https://go.votomobile.org/apidoc/prompts.html
  *
- * @desc TODO
+ * @desc 
+ *
+ * Prompts are reusable elements that enable organisations to setup default 
+ * actions that should occur in special cases in order to prompt a subscriber 
+ * to take some action.
+ *
+ * ### Submodules
+ *
+ * * [prompts.languages.selectors]{@link module:prompts^languages^selectors}
  */
 module.exports = function(config) {
 
@@ -39,39 +47,67 @@ module.exports = function(config) {
 
   return {
 
-    /*
-     * viamo.prompts.languages
+    /**
+     * @module prompts^languages
+     *
+     * @ignore
      */
     languages: {
 
-      /*
-       * viamo.prompts.languages.selectors
+      /**
+       * @module prompts^languages^selectors
        *
-       * https://go.votomobile.org/apidoc/prompts.html#language-selectors
+       * @see https://go.votomobile.org/apidoc/prompts.html#language-selectors
        */
       selectors: {
 
-        /*
-         * viamo.prompts.languages.selectors.create
+        /**
+         * @instance
          *
-         * https://go.votomobile.org/apidoc/prompts.html#create-a-language-selector
+         * @see https://go.votomobile.org/apidoc/prompts.html#create-a-language-selector
          */
         create: function() {
         },
 
-        /*
-         * viamo.prompts.languages.selectors.get
+        /**
+         * @instance
          *
-         * https://go.votomobile.org/apidoc/prompts.html#list-language-selectors
-         * https://go.votomobile.org/apidoc/prompts.html#list-language-selector-details
+         * @method get
+         *
+         * @see https://go.votomobile.org/apidoc/prompts.html#list-language-selectors
+         *
+         * @desc List language selectors.
+         *
+         * @returns A Promise that resolves to the response object from Viamo.
+         */
+
+        /**
+         * @instance
+         *
+         * @method get
+         *
+         * @see https://go.votomobile.org/apidoc/prompts.html#list-language-selector-details
+         *
+         * @desc Get details of a language selector.
+         *
+         * @param id {Number | String} - Language selector ID
+         *
+         * @returns A Promise that resolves to the response object from Viamo.
          */
         get: function() {
+          var arg0 = arguments[0];
+          if ('number' === arg0 || 'string' === arg0) {
+            return api.get(`prompts/languages/selectors/${arg0}`, arguments[1]);
+          }
+          return api.get('prompts/languages/selectors', arg0);
         },
 
-        /*
+        /**
+         * @instance
+         *
          * viamo.prompts.languages.selectors.delete
          *
-         * https://go.votomobile.org/apidoc/prompts.html#delete-language-selector
+         * @see https://go.votomobile.org/apidoc/prompts.html#delete-language-selector
          */
         delete: function() {
         }
@@ -93,13 +129,13 @@ module.exports = function(config) {
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-audioFiles.html">audioFiles</a></li><li><a href="module-groups.html">groups</a></li><li><a href="module-incomingCalls.html">incomingCalls</a></li><li><a href="module-incomingCalls%255Ecounts.html">incomingCalls^counts</a></li><li><a href="module-incomingCalls%255EdeliveryLogs.html">incomingCalls^deliveryLogs</a></li><li><a href="module-languages.html">languages</a></li><li><a href="module-messages.html">messages</a></li><li><a href="module-messages%255Ecounts.html">messages^counts</a></li><li><a href="module-outgoingCalls.html">outgoingCalls</a></li><li><a href="module-outgoingCalls%255Ecounts.html">outgoingCalls^counts</a></li><li><a href="module-outgoingCalls%255EdeliveryLogs.html">outgoingCalls^deliveryLogs</a></li><li><a href="module-outgoingCalls%255Esummary.html">outgoingCalls^summary</a></li><li><a href="module-phoneNumbers.html">phoneNumbers</a></li><li><a href="module-prompts.html">prompts</a></li><li><a href="module-subscribers.html">subscribers</a></li><li><a href="module-surveys.html">surveys</a></li><li><a href="module-surveys%255Econclusion.html">surveys^conclusion</a></li><li><a href="module-surveys%255Ecounts.html">surveys^counts</a></li><li><a href="module-surveys%255EdeliveryLogs.html">surveys^deliveryLogs</a></li><li><a href="module-surveys%255Eintroduction.html">surveys^introduction</a></li><li><a href="module-surveys%255Equestions.html">surveys^questions</a></li><li><a href="module-surveys%255Equestions%255Ecounts.html">surveys^questions^counts</a></li><li><a href="module-surveys%255Equestions%255Eresults.html">surveys^questions^results</a></li><li><a href="module-surveys%255Eresults.html">surveys^results</a></li><li><a href="module-surveys%255Esubscribers.html">surveys^subscribers</a></li></ul><h3>Global</h3><ul><li><a href="global.html#accountCredit">accountCredit</a></li><li><a href="global.html#ping">ping</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-audioFiles.html">audioFiles</a></li><li><a href="module-groups.html">groups</a></li><li><a href="module-incomingCalls.html">incomingCalls</a></li><li><a href="module-incomingCalls%255Ecounts.html">incomingCalls^counts</a></li><li><a href="module-incomingCalls%255EdeliveryLogs.html">incomingCalls^deliveryLogs</a></li><li><a href="module-languages.html">languages</a></li><li><a href="module-messages.html">messages</a></li><li><a href="module-messages%255Ecounts.html">messages^counts</a></li><li><a href="module-outgoingCalls.html">outgoingCalls</a></li><li><a href="module-outgoingCalls%255Ecounts.html">outgoingCalls^counts</a></li><li><a href="module-outgoingCalls%255EdeliveryLogs.html">outgoingCalls^deliveryLogs</a></li><li><a href="module-outgoingCalls%255Esummary.html">outgoingCalls^summary</a></li><li><a href="module-phoneNumbers.html">phoneNumbers</a></li><li><a href="module-prompts.html">prompts</a></li><li><a href="module-prompts%255Elanguages%255Eselectors.html">prompts^languages^selectors</a></li><li><a href="module-subscribers.html">subscribers</a></li><li><a href="module-subscribers%255EdeliveryLogs.html">subscribers^deliveryLogs</a></li><li><a href="module-subscribers%255Egroups.html">subscribers^groups</a></li><li><a href="module-subscribers%255Ephone.html">subscribers^phone</a></li><li><a href="module-surveys.html">surveys</a></li><li><a href="module-surveys%255Econclusion.html">surveys^conclusion</a></li><li><a href="module-surveys%255Ecounts.html">surveys^counts</a></li><li><a href="module-surveys%255EdeliveryLogs.html">surveys^deliveryLogs</a></li><li><a href="module-surveys%255Eintroduction.html">surveys^introduction</a></li><li><a href="module-surveys%255Equestions.html">surveys^questions</a></li><li><a href="module-surveys%255Equestions%255Ecounts.html">surveys^questions^counts</a></li><li><a href="module-surveys%255Equestions%255Eresults.html">surveys^questions^results</a></li><li><a href="module-surveys%255Eresults.html">surveys^results</a></li><li><a href="module-surveys%255Esubscribers.html">surveys^subscribers</a></li></ul><h3>Global</h3><ul><li><a href="global.html#accountCredit">accountCredit</a></li><li><a href="global.html#ping">ping</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Tue Apr 24 2018 10:54:54 GMT+0300 (EAT)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Tue Apr 24 2018 15:15:54 GMT+0300 (EAT)
 </footer>
 
 <script> prettyPrint(); </script>

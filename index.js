@@ -8,9 +8,9 @@ var viamoAPI = require('./lib');
 
 var viamo = viamoAPI(process.env.API_KEY);
 
-viamo.accountCredit()
+viamo.messages.get()
 .then((res) => {
-  console.log(res.data);
+  console.log(res);
 });
 
 //viamo.ping()
