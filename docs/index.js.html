@@ -39,8 +39,8 @@
  *
  * | Name             | Required | Type       | Default                         | Description   |
  * | ---------------- | -------- | ---------- | ------------------------------- | ------------- |
- * | api.key          | yes      | String     |                                 | Viamo API key. See {@link https://go.votomobile.org/apidoc/#authentication} |
- * | api.url          | no       | String     | http://go.votomobile.org/api/v1 | Viamo API URL |
+ * | key              | yes      | String     |                                 | Viamo API key. See {@link https://go.votomobile.org/apidoc/#authentication} |
+ * | url              | no       | String     | http://go.votomobile.org/api/v1 | Viamo API URL |
  * | fullResponse     | no       | String     | false                           | Whether the returned Promise should resolve to the full response. If false, only the response body is returned. |
  *
  * @version 0.1.0
@@ -49,14 +49,13 @@
  */
 module.exports = function(config) {
   if ('string' === typeof(config)) {
-    config = { api: { key: config } };
+    config = { key: config };
   }
   if (!config.hasOwnProperty('fullResponse')) {
     config.fullResponse = false;
   }
-  config.api = config.api || {};
-  if ('string' !== typeof(config.api.url)) {
-    config.api.url = 'https://go.votomobile.org/api/v1';
+  if ('string' !== typeof(config.url)) {
+    config.url = 'https://go.votomobile.org/api/v1';
   }
 
   var api = require('./api')(config);
@@ -122,7 +121,7 @@ module.exports = function(config) {
      *
      * @example
      *
-     * viamo.accountsCredit()
+     * viamo.accountCredit()
      * .then((res) => {
      *   console.log(res);  // or res.data for the actual credit balance
      * });
@@ -131,7 +130,7 @@ module.exports = function(config) {
      *
      * A Promise that resolves to the response object from Viamo.      
      */
-    accountsCredit: function() {
+    accountCredit: function() {
       return api.get('accounts/credit');
     }
 
@@ -148,13 +147,13 @@ module.exports = function(config) {
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-audioFiles.html">audioFiles</a></li><li><a href="module-groups.html">groups</a></li><li><a href="module-incomingCalls.html">incomingCalls</a></li><li><a href="module-incomingCalls%255Ecounts.html">incomingCalls^counts</a></li><li><a href="module-incomingCalls%255EdeliveryLogs.html">incomingCalls^deliveryLogs</a></li><li><a href="module-languages.html">languages</a></li><li><a href="module-messages.html">messages</a></li><li><a href="module-messages%255Ecounts.html">messages^counts</a></li><li><a href="module-outgoingCalls.html">outgoingCalls</a></li><li><a href="module-outgoingCalls%255Ecounts.html">outgoingCalls^counts</a></li><li><a href="module-outgoingCalls%255EdeliveryLogs.html">outgoingCalls^deliveryLogs</a></li><li><a href="module-outgoingCalls%255Esummary.html">outgoingCalls^summary</a></li><li><a href="module-phoneNumbers.html">phoneNumbers</a></li><li><a href="module-prompts.html">prompts</a></li><li><a href="module-subscribers.html">subscribers</a></li><li><a href="module-surveys.html">surveys</a></li><li><a href="module-surveys%255Econclusion.html">surveys^conclusion</a></li><li><a href="module-surveys%255Ecounts.html">surveys^counts</a></li><li><a href="module-surveys%255EdeliveryLogs.html">surveys^deliveryLogs</a></li><li><a href="module-surveys%255Eintroduction.html">surveys^introduction</a></li><li><a href="module-surveys%255Equestions.html">surveys^questions</a></li><li><a href="module-surveys%255Equestions%255Ecounts.html">surveys^questions^counts</a></li><li><a href="module-surveys%255Equestions%255Eresults.html">surveys^questions^results</a></li><li><a href="module-surveys%255Eresults.html">surveys^results</a></li><li><a href="module-surveys%255Esubscribers.html">surveys^subscribers</a></li></ul><h3>Global</h3><ul><li><a href="global.html#accountsCredit">accountsCredit</a></li><li><a href="global.html#ping">ping</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-audioFiles.html">audioFiles</a></li><li><a href="module-groups.html">groups</a></li><li><a href="module-incomingCalls.html">incomingCalls</a></li><li><a href="module-incomingCalls%255Ecounts.html">incomingCalls^counts</a></li><li><a href="module-incomingCalls%255EdeliveryLogs.html">incomingCalls^deliveryLogs</a></li><li><a href="module-languages.html">languages</a></li><li><a href="module-messages.html">messages</a></li><li><a href="module-messages%255Ecounts.html">messages^counts</a></li><li><a href="module-outgoingCalls.html">outgoingCalls</a></li><li><a href="module-outgoingCalls%255Ecounts.html">outgoingCalls^counts</a></li><li><a href="module-outgoingCalls%255EdeliveryLogs.html">outgoingCalls^deliveryLogs</a></li><li><a href="module-outgoingCalls%255Esummary.html">outgoingCalls^summary</a></li><li><a href="module-phoneNumbers.html">phoneNumbers</a></li><li><a href="module-prompts.html">prompts</a></li><li><a href="module-subscribers.html">subscribers</a></li><li><a href="module-surveys.html">surveys</a></li><li><a href="module-surveys%255Econclusion.html">surveys^conclusion</a></li><li><a href="module-surveys%255Ecounts.html">surveys^counts</a></li><li><a href="module-surveys%255EdeliveryLogs.html">surveys^deliveryLogs</a></li><li><a href="module-surveys%255Eintroduction.html">surveys^introduction</a></li><li><a href="module-surveys%255Equestions.html">surveys^questions</a></li><li><a href="module-surveys%255Equestions%255Ecounts.html">surveys^questions^counts</a></li><li><a href="module-surveys%255Equestions%255Eresults.html">surveys^questions^results</a></li><li><a href="module-surveys%255Eresults.html">surveys^results</a></li><li><a href="module-surveys%255Esubscribers.html">surveys^subscribers</a></li></ul><h3>Global</h3><ul><li><a href="global.html#accountCredit">accountCredit</a></li><li><a href="global.html#ping">ping</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Tue Apr 24 2018 09:05:31 GMT+0300 (EAT)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Tue Apr 24 2018 10:54:54 GMT+0300 (EAT)
 </footer>
 
 <script> prettyPrint(); </script>
