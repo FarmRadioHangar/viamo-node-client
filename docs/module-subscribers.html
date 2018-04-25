@@ -38,9 +38,9 @@
     <div class="container-overview">
     
         
-            <div class="description"><p>A subscriber in Viamo is an individual identified by their phone number. 
-Other information associated with subscribers include their primary 
-language, and whether they can receive calls or SMS. </p>
+            <div class="description"><p>Subscribers in Viamo are individuals, identified by their phone numbers. 
+Other associated information include primary language, and whether a
+subscriber can receive calls or SMS. </p>
 <h3>Submodules</h3><ul>
 <li><a href="module-subscribers%255Egroups.html">subscribers.groups</a></li>
 <li><a href="module-subscribers%255Ephone.html">subscribers.phone</a></li>
@@ -156,19 +156,120 @@ language, and whether they can receive calls or SMS. </p>
     
 
     
-    <h4 class="name" id="create"><span class="type-signature"></span>create<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="create"><span class="type-signature"></span>create<span class="signature">(params)</span><span class="type-signature"></span></h4>
     
 
     
 
 
 
+<div class="description">
+    <p>Create a subscriber.</p>
+<p>This function takes as argument an object with query parameters to be
+sent with the Viamo API request. The parameters available for this
+request are:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>phone</td>
+<td>Yes</td>
+<td>String</td>
+<td>Phone number of subscriber in local or international format.</td>
+</tr>
+</tbody>
+</table>
+<p><em>Note:</em> The properties of this object can alternatively be specified in
+underscore style (camel case), which is how they are sent in the final
+request. (E.g., as <code>some_param</code> instead of <code>someParam</code>.)</p>
+<h4>Creating bulk subscribers</h4><table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>phone_numbers</td>
+<td>No</td>
+<td>String &vert; Array</td>
+<td>x</td>
+</tr>
+<tr>
+<td>if_phone_number_exists:</td>
+<td>No</td>
+<td>&quot;skip&quot; &vert; &quot;create_duplicate&quot; &vert; &quot;add_to_groups_only&quot;</td>
+<td>x</td>
+</tr>
+</tbody>
+</table>
+</div>
 
 
 
 
 
 
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>params</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>See above</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
 
 
 
@@ -204,7 +305,7 @@ language, and whether they can receive calls or SMS. </p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="modules_subscribers.js.html">modules/subscribers.js</a>, <a href="modules_subscribers.js.html#line29">line 29</a>
+        <a href="modules_subscribers.js.html">modules/subscribers.js</a>, <a href="modules_subscribers.js.html#line54">line 54</a>
     </li></ul></dd>
     
 
@@ -234,6 +335,16 @@ language, and whether they can receive calls or SMS. </p>
 
 
 
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>A Promise that resolves to the response object from Viamo.</p>
+</div>
+
+
+
+    
 
 
 
@@ -245,19 +356,75 @@ language, and whether they can receive calls or SMS. </p>
     
 
     
-    <h4 class="name" id="delete"><span class="type-signature"></span>delete<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="delete"><span class="type-signature"></span>delete<span class="signature">(id)</span><span class="type-signature"></span></h4>
     
 
     
 
 
 
+<div class="description">
+    <p>Delete a subscriber.</p>
+</div>
 
 
 
 
 
 
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>id</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+|
+
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Subscriber ID</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
 
 
 
@@ -293,7 +460,7 @@ language, and whether they can receive calls or SMS. </p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="modules_subscribers.js.html">modules/subscribers.js</a>, <a href="modules_subscribers.js.html#line94">line 94</a>
+        <a href="modules_subscribers.js.html">modules/subscribers.js</a>, <a href="modules_subscribers.js.html#line135">line 135</a>
     </li></ul></dd>
     
 
@@ -323,6 +490,16 @@ language, and whether they can receive calls or SMS. </p>
 
 
 
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>A Promise that resolves to the response object from Viamo.</p>
+</div>
+
+
+
+    
 
 
 
@@ -438,7 +615,7 @@ language, and whether they can receive calls or SMS. </p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="modules_subscribers.js.html">modules/subscribers.js</a>, <a href="modules_subscribers.js.html#line56">line 56</a>
+        <a href="modules_subscribers.js.html">modules/subscribers.js</a>, <a href="modules_subscribers.js.html#line81">line 81</a>
     </li></ul></dd>
     
 
@@ -615,7 +792,7 @@ language, and whether they can receive calls or SMS. </p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="modules_subscribers.js.html">modules/subscribers.js</a>, <a href="modules_subscribers.js.html#line32">line 32</a>
+        <a href="modules_subscribers.js.html">modules/subscribers.js</a>, <a href="modules_subscribers.js.html#line57">line 57</a>
     </li></ul></dd>
     
 
@@ -671,19 +848,75 @@ language, and whether they can receive calls or SMS. </p>
     
 
     
-    <h4 class="name" id="update"><span class="type-signature"></span>update<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="update"><span class="type-signature"></span>update<span class="signature">(id)</span><span class="type-signature"></span></h4>
     
 
     
 
 
 
+<div class="description">
+    <p>Modify subscriber details.</p>
+</div>
 
 
 
 
 
 
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>id</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+|
+
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Subscriber ID</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
 
 
 
@@ -719,7 +952,7 @@ language, and whether they can receive calls or SMS. </p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="modules_subscribers.js.html">modules/subscribers.js</a>, <a href="modules_subscribers.js.html#line86">line 86</a>
+        <a href="modules_subscribers.js.html">modules/subscribers.js</a>, <a href="modules_subscribers.js.html#line117">line 117</a>
     </li></ul></dd>
     
 
@@ -749,6 +982,16 @@ language, and whether they can receive calls or SMS. </p>
 
 
 
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>A Promise that resolves to the response object from Viamo.</p>
+</div>
+
+
+
+    
 
 
 
@@ -776,7 +1019,7 @@ language, and whether they can receive calls or SMS. </p>
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Tue Apr 24 2018 15:31:52 GMT+0300 (EAT)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Tue Apr 24 2018 21:02:59 GMT+0300 (EAT)
 </footer>
 
 <script> prettyPrint(); </script>
