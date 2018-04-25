@@ -1,8 +1,20 @@
 var nock = require('nock');
 
-var viamoUrl = 'https://go.votomobile.org/api/v1';
+var url = 'https://go.votomobile.org/api/v1';
 
-nock(viamoUrl)
+nock(url)
+.get(/languages\/206069/)
+.reply(200, {
+  status: 200,
+  code: 1000,
+  data: { language: { id: '206069', name: 'English', abbreviation: 'EN' } },
+  message: 'Language Details Fetched Successfully',
+  more_info: '',
+  pagination: null,
+  url: 'https://go.votomobile.org/api/v1/languages/206069' 
+});
+
+nock(url)
 .get(/surveys.*/)
 .reply(200, {
   status: 200,
@@ -47,7 +59,7 @@ nock(viamoUrl)
   more_info: ""
 }).persist();
 
-nock(viamoUrl)
+nock(url)
 .post(/surveys.*/)
 .reply(200, {
   "status": 200,

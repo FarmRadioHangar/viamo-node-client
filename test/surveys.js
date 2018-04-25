@@ -11,11 +11,8 @@ chai.should();
 var viamoUrl = 'https://go.votomobile.org/api/v1/';
 
 var viamo = viamoAPI({
-  api: {
-    url: viamoUrl,
-    key: 'test',
-    fullResponse: true
-  }
+  url: viamoUrl,
+  key: 'test'
 });
 
 describe('surveys', function() {
