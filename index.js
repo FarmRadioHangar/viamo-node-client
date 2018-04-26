@@ -8,46 +8,114 @@ var viamoAPI = require('./lib');
 
 var viamo = viamoAPI(process.env.API_KEY);
 
-viamo.subscribers.get({
-  limit: 2
+viamo.languages.update(207546, {
+  name: 'Portugese',
 })
 .then((res) => {
-  console.log(res.data.subscribers); 
-  console.log(res.hasNextPage); 
-  //res.data.subscribers.forEach((subscriber) => {
-  //  console.log(subscriber);
-  //});
+  return viamo.languages.get();
 })
-//.then((res) => {
-//  res.data.languages.forEach((language) => {
-//    console.log(language.id + ': ' + language.name);
-//  })
-//})
+.then((res) => {
+  res.data.languages.forEach((language) => {
+    console.log(language.id + ' ' + language.name);
+  });
+})
 .catch((error) => {
-  console.dir(error);
-  // Handle error
+  console.error(error);
 });
 
-//viamo.ping()
-//.then(function(res) {
-//  console.log(res.more_info);
+//viamo.languages.create({
+//  name: 'Portugese',
+//  abbreviation: 'PT'
 //})
-//
-//viamo.outgoingCalls.get({
-//  limit: 5
-//})
-//.then(function next(res) {
-//  res.data.outgoing_calls.forEach((call) => {
-//    console.log(call.id);
-//  });
-//  if (res.hasNextPage) {
-//    return res.nextPage().then(next);
+//.then((res) => {
+//  if (200 == res.status) {
+//    console.log(res.message);
 //  }
+//  return viamo.languages.get();
+//})
+//.then((res) => {
+//  res.data.languages.forEach((language) => {
+//    console.log(language.id + ' ' + language.name);
+//  });
 //})
 //.catch((error) => {
 //  console.error(error);
 //});
 
+//viamo.audioFiles.get(342555)
+//.then((res) => {
+//  console.log(res.data.audio_file);
+//});
+
+//viamo.surveys.get()
+//.then((res) => {
+//  console.log(res.pagination);
+//  //res.data.surveys.forEach((survey) => {
+//  //  console.log(survey.title);
+//  //});
+//})
+//.catch((error) => {
+//  console.log(error.cause.errno);
+//});
+
+//viamo.languages.get(206070)
+//.then((res) => {
+//  console.log(res.data);
+//})
+//.catch((error) => {
+//  console.log(error.cause.errno);
+//});
+
+//viamo.languages.get()
+//.then((res) => {
+//  res.data.languages.map((language) => {
+//    console.log(`${language.id} ${language.name}`);
+//  });
+//})
+//.catch((error) => {
+//  console.log(error.cause.errno);
+//});
+
+//viamo.subscribers.get({
+//  limit: 2
+//})
+//.then((res) => {
+//  console.log(res.data.subscribers); 
+//  console.log(res.hasNextPage); 
+//  //res.data.subscribers.forEach((subscriber) => {
+//  //  console.log(subscriber);
+//  //});
+//})
+////.then((res) => {
+////  res.data.languages.forEach((language) => {
+////    console.log(language.id + ': ' + language.name);
+////  })
+////})
+//.catch((error) => {
+//  console.dir(error);
+//  // Handle error
+//});
+//
+////viamo.ping()
+////.then(function(res) {
+////  console.log(res.more_info);
+////})
+////
+////viamo.outgoingCalls.get({
+////  limit: 5
+////})
+////.then(function next(res) {
+////  res.data.outgoing_calls.forEach((call) => {
+////    console.log(call.id);
+////  });
+////  if (res.hasNextPage) {
+////    return res.nextPage().then(next);
+////  }
+////})
+////.catch((error) => {
+////  console.error(error);
+////});
+//
 //viamo.messages.create({
 //  title: 'Test'
 //})
