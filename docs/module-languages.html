@@ -158,33 +158,6 @@
 
 <div class="description">
     <p>Add a new language.</p>
-<p>This function takes as argument an object with query parameters to be
-sent with the Viamo API request. The parameters available for this
-request are:</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Required</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>name</td>
-<td>Yes</td>
-<td>String</td>
-<td></td>
-</tr>
-<tr>
-<td>abbreviation</td>
-<td>No</td>
-<td>String</td>
-<td>E.g., &quot;EN&quot; for English</td>
-</tr>
-</tbody>
-</table>
 </div>
 
 
@@ -236,7 +209,33 @@ request are:</p>
 
             
 
-            <td class="description last"><p>See above</p></td>
+            <td class="description last"><p>An object with query parameters to be sent with 
+                         the Viamo API request. The query parameters 
+                         available for this request are:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>Yes</td>
+<td>String</td>
+<td>Name of the language.</td>
+</tr>
+<tr>
+<td><code>abbreviation</code></td>
+<td>No</td>
+<td>String</td>
+<td>E.g., &quot;EN&quot; for English</td>
+</tr>
+</tbody>
+</table></td>
         </tr>
 
     
@@ -277,7 +276,7 @@ request are:</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="modules_languages.js.html">modules/languages.js</a>, <a href="modules_languages.js.html#line54">line 54</a>
+        <a href="modules_languages.js.html">modules/languages.js</a>, <a href="modules_languages.js.html#line52">line 52</a>
     </li></ul></dd>
     
 
@@ -349,7 +348,7 @@ viamo.languages.create({
     
 
     
-    <h4 class="name" id="delete"><span class="type-signature"></span>delete<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="delete"><span class="type-signature"></span>delete<span class="signature">(id)</span><span class="type-signature"></span></h4>
     
 
     
@@ -366,6 +365,58 @@ viamo.languages.create({
 
 
 
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>id</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+|
+
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Language ID</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
 
 
 
@@ -401,7 +452,7 @@ viamo.languages.create({
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="modules_languages.js.html">modules/languages.js</a>, <a href="modules_languages.js.html#line153">line 153</a>
+        <a href="modules_languages.js.html">modules/languages.js</a>, <a href="modules_languages.js.html#line160">line 160</a>
     </li></ul></dd>
     
 
@@ -556,7 +607,7 @@ viamo.languages.create({
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="modules_languages.js.html">modules/languages.js</a>, <a href="modules_languages.js.html#line95">line 95</a>
+        <a href="modules_languages.js.html">modules/languages.js</a>, <a href="modules_languages.js.html#line90">line 90</a>
     </li></ul></dd>
     
 
@@ -672,7 +723,7 @@ viamo.languages.get(206069) // Replace with a valid language ID
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="modules_languages.js.html">modules/languages.js</a>, <a href="modules_languages.js.html#line69">line 69</a>
+        <a href="modules_languages.js.html">modules/languages.js</a>, <a href="modules_languages.js.html#line64">line 64</a>
     </li></ul></dd>
     
 
@@ -738,7 +789,7 @@ viamo.languages.get()
     
 
     
-    <h4 class="name" id="update"><span class="type-signature"></span>update<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="update"><span class="type-signature"></span>update<span class="signature">(id, params)</span><span class="type-signature"></span></h4>
     
 
     
@@ -755,6 +806,104 @@ viamo.languages.get()
 
 
 
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>id</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+|
+
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Language ID</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>params</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>An object with query parameters to be sent with 
+                         the Viamo API request. The query parameters 
+                         available for this request are:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>String</td>
+<td>Name of the language.</td>
+</tr>
+<tr>
+<td><code>abbreviation</code></td>
+<td>String</td>
+<td>E.g., &quot;EN&quot; for English</td>
+</tr>
+</tbody>
+</table></td>
+        </tr>
+
+    
+    </tbody>
+</table>
 
 
 
@@ -790,7 +939,7 @@ viamo.languages.get()
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="modules_languages.js.html">modules/languages.js</a>, <a href="modules_languages.js.html#line137">line 137</a>
+        <a href="modules_languages.js.html">modules/languages.js</a>, <a href="modules_languages.js.html#line138">line 138</a>
     </li></ul></dd>
     
 
@@ -857,7 +1006,7 @@ viamo.languages.get()
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Tue Apr 24 2018 21:02:59 GMT+0300 (EAT)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Wed Apr 25 2018 22:28:59 GMT+0300 (EAT)
 </footer>
 
 <script> prettyPrint(); </script>
